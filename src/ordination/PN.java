@@ -9,8 +9,9 @@ public class PN extends Ordination{
     private double antalEnheder;
     private ArrayList<LocalDate> datoerGivet = new ArrayList<>();
 
-    public PN(LocalDate startDato, LocalDate slutDato) {
+    public PN(LocalDate startDato, LocalDate slutDato, double antalEnheder) {
         super(startDato, slutDato);
+        this.antalEnheder = antalEnheder;
     }
 
     /**
@@ -23,7 +24,6 @@ public class PN extends Ordination{
     public boolean givDosis(LocalDate givetDato) {
         if (givetDato.isBefore(getSlutDato()) && givetDato.isAfter(getStartDato())){
             datoerGivet.add(givetDato);
-            antalEnheder += 1.0; // skal måske være andet end +1
             return true;
         }
         return false;   
