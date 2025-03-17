@@ -9,7 +9,7 @@ public class Patient {
     private ArrayList<Ordination> ordinationer = new ArrayList<>();
 
 
-// TODO: Link til Ordination
+
 
     public Patient(String cprnr, String navn, double vaegt) {
         this.cprnr = cprnr;
@@ -52,8 +52,6 @@ public class Patient {
     public void setVaegt(double vaegt){
         this.vaegt = vaegt;
     }
-
-    //TODO: Metoder til at vedligeholde link til Ordination
 
     @Override
     public String toString(){
