@@ -30,7 +30,13 @@ public class PN extends Ordination{
     }
 
     public double doegnDosis() {
-        return (antalEnheder * datoerGivet.size()) / ChronoUnit.DAYS.between(datoerGivet.getFirst(), datoerGivet.getLast());
+        if (datoerGivet.size() <= 0){
+            return 0;
+        }
+        else if (datoerGivet.size() == 1){
+            return antalEnheder;
+        }
+        return samletDosis() / ChronoUnit.DAYS.between(datoerGivet.getFirst(), datoerGivet.getLast());
     }
 
     @Override
