@@ -42,4 +42,8 @@ public class DagligFast extends Ordination{
     public String getType() {
         return getLaegemiddel().getEnhed();
     }
+
+    public Dosis[] getDoser() {
+        return dosis;
+    }
 }

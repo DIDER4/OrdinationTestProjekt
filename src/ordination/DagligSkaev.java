@@ -38,4 +38,8 @@ public class DagligSkaev extends Ordination {
     public String getType() {
         return getLaegemiddel().getEnhed();
     }
+
+    public ArrayList<Dosis> getDoser() {
+        return dosis;
+    }
 }

@@ -40,7 +40,7 @@ public class PN extends Ordination{
 
 
     public double samletDosis() {
-        return antalEnheder * ;
+        return antalEnheder * datoerGivet.size();
     }
 
     /**
@@ -48,8 +48,7 @@ public class PN extends Ordination{
      * @return
      */
     public int getAntalGangeGivet() {
-        // TODO
-        return-1;
+        return datoerGivet.size();
     }
 
     public double getAntalEnheder() {

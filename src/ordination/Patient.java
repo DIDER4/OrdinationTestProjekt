@@ -1,16 +1,36 @@
 package ordination;
 
+import java.util.ArrayList;
+
 public class Patient {
     private String cprnr;
     private String navn;
     private double vaegt;
+    private ArrayList<Ordination> ordinationer = new ArrayList<>();
 
-    // TODO: Link til Ordination
+
+// TODO: Link til Ordination
 
     public Patient(String cprnr, String navn, double vaegt) {
         this.cprnr = cprnr;
         this.navn = navn;
         this.vaegt = vaegt;
+    }
+
+    public ArrayList<Ordination> getOrdinationer() {
+        return new ArrayList<>(ordinationer);
+    }
+
+    public void addOrdination(Ordination ordination){
+        if (!ordinationer.contains(ordination)){
+            ordinationer.add(ordination);
+        }
+    }
+
+    public void removeOrdination(Ordination ordination){
+        if (ordinationer.contains(ordination)){
+            ordinationer.remove(ordination);
+        }
     }
 
     public String getCprnr() {
