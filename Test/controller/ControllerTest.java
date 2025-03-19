@@ -19,7 +19,7 @@ class ControllerTest {
     @BeforeEach
     void setUp() {
         controller = Controller.getTestController();
-        storage = new Storage();
+        storage = controller.getStorage();
         controller.createSomeObjects();
     }
 
@@ -65,8 +65,8 @@ class ControllerTest {
         Laegemiddel laegemiddel = storage.getAllLaegemidler().get(2);
         LocalDate startDato = LocalDate.of(2021, 1, 23);
         LocalDate slutDato = LocalDate.of(2021, 1, 24);
-        LocalTime[] klokkeSlet = { LocalTime.of(12, 0), LocalTime.of(12, 40), LocalTime.of(16, 0), LocalTime.of(18, 45) };
-        double[] antalEnheder = { 0.5, 1, 2.5, 3 };
+        LocalTime[] klokkeSlet = {LocalTime.of(12, 0), LocalTime.of(12, 40), LocalTime.of(16, 0), LocalTime.of(18, 45)};
+        double[] antalEnheder = {0.5, 1, 2.5, 3};
 
         DagligSkaev dagligSkaev = controller.opretDagligSkaevOrdination(startDato, slutDato, patient, laegemiddel, klokkeSlet, antalEnheder);
 
