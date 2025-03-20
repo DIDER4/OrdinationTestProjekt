@@ -19,7 +19,7 @@ class ControllerTest {
     @BeforeEach
     void setUp() {
         controller = Controller.getTestController();
-        storage = controller.getStorage();
+//        storage = controller.getStorage();
         controller.createSomeObjects();
     }
 
