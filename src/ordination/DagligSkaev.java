@@ -35,7 +35,13 @@ public class DagligSkaev extends Ordination {
 
     @Override
     public double doegnDosis() {
-        return samletDosis() / antalDage();
+        if (dosis.size() <= 0){
+            return 0;
+        }
+        else if (dosis.size() == 1){
+            return dosis.getFirst().getAntal();
+        }
+        return samletDosis() / (ChronoUnit.DAYS.between(getStartDato(), getSlutDato()) + 1);
     }
 
     @Override
