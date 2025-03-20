@@ -7,7 +7,6 @@ import storage.Storage;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +18,7 @@ class ControllerTest {
     @BeforeEach
     void setUp() {
         controller = Controller.getTestController();
-//        storage = controller.getStorage();
+        storage = controller.getStorage();
         controller.createSomeObjects();
     }
 
@@ -83,7 +82,7 @@ class ControllerTest {
 
         double dosis = controller.anbefaletDosisPrDoegn(patient, laegemiddel);
 
-        assertTrue(dosis > 0);
+        assertTrue(dosis == 9.51);
     }
 
     @Test
@@ -94,6 +93,6 @@ class ControllerTest {
 
         int antal = controller.antalOrdinationerPrVaegtPrLaegemiddel(vaegtStart, vaegtSlut, laegemiddel);
 
-        assertTrue(antal >= 0);
+        assertTrue(antal == 1);
     }
 }
