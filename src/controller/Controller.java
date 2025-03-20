@@ -22,6 +22,10 @@ public class Controller {
 		return controller;
 	}
 
+	public Storage getStorage() {
+		return storage;
+	}
+
 	public static Controller getTestController() {
 		return new Controller();
 	}
