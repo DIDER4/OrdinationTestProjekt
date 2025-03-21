@@ -1,6 +1,7 @@
 package ordination;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class PN extends Ordination {
@@ -45,7 +46,7 @@ public class PN extends Ordination {
             if (antalDage == 1) {
                 return samletDosis();
             } else {
-                return samletDosis() / antalDage;
+                return samletDosis() / ChronoUnit.DAYS.between(datoerGivet.getFirst(), datoerGivet.getLast());
             }
         }
     }
