@@ -26,7 +26,7 @@ class DagligFastTest {
        assertEquals(expected.getAntal(), actual.getAntal());
   }
     @Test
-    void opretDosisTest_Over1(){
+    void doegnDosisTest_Over1(){
        dagligFast.opretDosis(LocalTime.of(8,00), 2);
        dagligFast.opretDosis(LocalTime.of(12,00), 1);
        dagligFast.opretDosis(LocalTime.of(20,00), 2);
@@ -38,7 +38,7 @@ class DagligFastTest {
     }
 
   @Test
-    void opretDosisTest_Under1(){
+    void doegnDosisTest_Under1(){
       double expected = 0;
       double actual = dagligFast.doegnDosis();
 
