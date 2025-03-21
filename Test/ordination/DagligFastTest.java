@@ -22,8 +22,8 @@ class DagligFastTest {
        Dosis actual = dagligFast.opretDosis(LocalTime.of(8,00), 2);
 
        assertNotNull(actual);
-       assertEquals(expected, actual.getTid());
-       assertEquals(expected, actual.getAntal());
+       assertEquals(expected.getTid(), actual.getTid());
+       assertEquals(expected.getAntal(), actual.getAntal());
   }
     @Test
     void opretDosisTest_Over1(){
