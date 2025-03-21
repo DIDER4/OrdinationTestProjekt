@@ -36,7 +36,7 @@ class ControllerTest {
         assertNotNull(pn);
         assertEquals(startDato, pn.getStartDato());
         assertEquals(slutDato, pn.getSlutDato());
-        assertEquals(antal, pn.getAntalEnheder(), 0.01); // Muligvis anden variable end pn.getAntalEnheder()
+        assertEquals(antal, pn.getAntalEnheder(), 0.01);
         assertEquals(laegemiddel, pn.getLaegemiddel());
     }
 
@@ -94,6 +94,6 @@ class ControllerTest {
 
         int antal = controller.antalOrdinationerPrVaegtPrLaegemiddel(vaegtStart, vaegtSlut, laegemiddel);
 
-        assertEquals(1,antal);
+        assertTrue(antal == 1);
     }
 }

@@ -16,28 +16,33 @@ class DagligFastTest {
         dagligFast = new DagligFast(LocalDate.of(2025, 03, 17), LocalDate.of(2025, 03, 25));
     }
   @Test
-    void opretDosisTest_Success(){
-       LocalTime tid = LocalTime.of(8,0);
-       double antal = 2.0;
+    void opretDosisTest(){
+       Dosis expected = new Dosis(LocalTime.of(8,00), 2);
 
-       Dosis actual = dagligFast.opretDosis(tid, antal);
+       Dosis actual = dagligFast.opretDosis(LocalTime.of(8,00), 2);
 
        assertNotNull(actual);
-       assertEquals(tid, actual.getTid());
-       assertEquals(antal, actual.getAntal());
-
+       assertEquals(expected, actual.getTid());
+       assertEquals(expected, actual.getAntal());
   }
+    @Test
+    void opretDosisTest_Over1(){
+       dagligFast.opretDosis(LocalTime.of(8,00), 2);
+       dagligFast.opretDosis(LocalTime.of(12,00), 1);
+       dagligFast.opretDosis(LocalTime.of(20,00), 2);
+
+       double expected = 5;
+       double actual = dagligFast.doegnDosis();
+
+       assertEquals(expected, actual, 0.1);
+    }
 
   @Test
-    void opretDosisTest_Fail(){
-      // Arrange
-      double antal = 2.0;
+    void opretDosisTest_Under1(){
+      double expected = 0;
+      double actual = dagligFast.doegnDosis();
 
-      // Act
-      Dosis dosis = dagligFast.opretDosis(null, antal);
-
-      // Assert
-      assertNull(dosis.getTid());
+      assertEquals(expected, actual, 0.1);
   }
 
   @Test
